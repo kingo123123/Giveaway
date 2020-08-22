@@ -1,6 +1,8 @@
-const http = require('http');
+require("events").EventEmitter.defaultMaxListeners = 200;
 
-const express = require('express');
+const http = require("http");
+
+const express = require("express");
 
 const app = express();
 
@@ -14,9 +16,9 @@ app.listen(process.env.PORT);
 
 setInterval(() => {
 
-  http.get(`http://.glitch.me/`);
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 
-}, 280000);
+}, 280000)
 
  
 
